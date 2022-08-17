@@ -6,7 +6,7 @@ import 'screen_four.dart';
 import 'screen_two.dart';
 
 class Homepage extends StatelessWidget {
-  const Homepage({Key? key}) : super(key: key);
+  const Homepage({Key? key,  String? title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -77,15 +77,17 @@ class Homepage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('welcome to screen two '), 
+              const Text('welcome to screen one '), 
               const SizedBox(height: 20),
               MaterialButton(
                 color: Colors.blue,
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const Screentwo(title: 'screen two',
-                      email: 'jesse@gmail.com',
-                      phn: '090348949',
+                      MaterialPageRoute(builder: (_) => const Screentwo(title: '',
+                        
+                      //   title: 'screen two',
+                      // email: 'jesse@gmail.com',
+                      // phn: '090348949',
                       )));
                 },
                 child: const Text('GO TO SCREEN TWO'),

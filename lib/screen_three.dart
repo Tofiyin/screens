@@ -3,11 +3,11 @@ import 'package:my_first_app/home.dart';
 import 'package:my_first_app/screen_four.dart';
 
 class ScreenThree extends StatelessWidget {
-  final String? title, email, phn;
-  const ScreenThree({Key? key, this.title, this.email, this.phn}) : super(key: key);
 
+  const ScreenThree({Key? key,  String? title}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenThreeArguements;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -19,16 +19,19 @@ class ScreenThree extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('welcome to screen four'),
+              const Text('welcome to screen three'),
+             Text('${args.title}'),
+             Text('${args.name}'),
+             Text('${args.phone}'),
             const SizedBox(height: 20),
             MaterialButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const Homepage()));
+              Navigator.push(context,
+              MaterialPageRoute(builder: (_) => const Homepage()));
               },
               child: const Text('GO TO HOMEPAGE'),
             ),
-             MaterialButton(
+            MaterialButton(
               color: Colors.pink,
               onPressed: () {
                 Navigator.push(
@@ -38,11 +41,17 @@ class ScreenThree extends StatelessWidget {
                               title: 'screen four',
                             )));
               },
-              child: const Text('GO TO SCREEN FIVE'),
+              child: const Text('GO TO SCREEN FOUR'),
             ),
           ],
         ),
       ),
     );
   }
+}
+
+class ScreenThreeArguements {                     
+  final String? title, name, phone;
+                                                                                                                                                        
+  ScreenThreeArguements({required this.title, required this.name,  this.phone});
 }

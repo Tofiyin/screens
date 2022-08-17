@@ -19,12 +19,12 @@ class ScreenFour extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text('welcome to screen five'),
+            const Text('welcome to screen four'),
             const SizedBox(height: 20),
             MaterialButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const Homepage()));
+            onPressed: () {
+            Navigator.push(context,
+            MaterialPageRoute(builder: (_) => const Homepage(title: '')));                                       
               },
               child: const Text('GO TO SCREEN FIVE'),
             ),

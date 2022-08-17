@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/home.dart';
+import 'package:my_first_app/routes.dart';
+import 'login.dart';
+
+import 'screen_five.dart';
+import 'screen_four.dart';
+import 'screen_three.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +23,23 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Homepage(),
+      home: const LoginScreen(),
+      // initialRoute: '/',
+      // routes: MyHomepageroutes().routeSettings,
+      // // home: const Homepage(),
+      // routes: {
+      //   '/': (_) => const Homepage(title: 'title'),
+      //   '/screen_four': (context) => const ScreenFour(
+      //         title: 'screen four',
+      //       ),
+      //   '/screen_three': (context) => const ScreenThree(
+      //         title: 'screen three',
+      //       ),
+      //   '/screen_five': (context) => const ScreenFive(
+      //         title: 'screen five',
+      //       ),
+      // },
+      
     );
     
   }
